@@ -9,16 +9,17 @@ import com.example.lenovo.fulicenters.bean.User;
  */
 
 public class DBManger {
-    private  DBManger dbMgr=new DBManger();
+    private static DBManger dbMgr=new DBManger();
     private static DBopenHelder mHolder;
 
     public DBManger() {
 
     }
-    public  static void onInit(Context context){
+    public  static DBManger onInit(Context context){
         if (mHolder==null) {
             mHolder = DBopenHelder.onInit(context);
         }
+        return  dbMgr;
     }
     public static void close(){
         if (mHolder!=null){
@@ -33,7 +34,7 @@ public class DBManger {
     public User getuser(String username){
         return null;
     }
-    public boolean updateuser(){
+    public boolean updateuser(User user){
         return false;
     }
 }
