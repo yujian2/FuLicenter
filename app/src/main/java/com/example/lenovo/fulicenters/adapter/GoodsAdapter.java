@@ -13,12 +13,15 @@ import com.example.lenovo.fulicenters.I;
 import com.example.lenovo.fulicenters.R;
 import com.example.lenovo.fulicenters.bean.NewGoodsBean;
 import com.example.lenovo.fulicenters.utils.ImageLoader;
+import com.example.lenovo.fulicenters.utils.MFGT;
+import com.example.lenovo.fulicenters.view.FooterViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by clawpo on 2016/10/17.
@@ -66,6 +69,7 @@ public class GoodsAdapter extends Adapter {
             ImageLoader.downloadImg(mContext,vh.mIvGoodsThumb,goods.getGoodsThumb());
             vh.mTvGoodsName.setText(goods.getGoodsName());
             vh.mTvGoodsPrice.setText(goods.getCurrencyPrice());
+            vh.mLayoutGoods.setTag(goods.getGoodsId());
         }
     }
 
@@ -99,7 +103,7 @@ public class GoodsAdapter extends Adapter {
         notifyDataSetChanged();
     }
 
-    static class GoodsViewHolder extends ViewHolder{
+    class GoodsViewHolder extends ViewHolder{
         @BindView(R.id.ivGoodsThumb)
         ImageView mIvGoodsThumb;
         @BindView(R.id.tvGoodsName)
@@ -113,15 +117,11 @@ public class GoodsAdapter extends Adapter {
             super(view);
             ButterKnife.bind(this, view);
         }
-    }
-
-    static class FooterViewHolder extends ViewHolder{
-        @BindView(R.id.tvFooter)
-        TextView mTvFooter;
-
-        FooterViewHolder(View view) {
-            super(view);
-            ButterKnife.bind(this, view);
+        @OnClick(R.id.layout_goods)
+        public void onGoodsItemClick(){
+            int goodsId = (int) mLayoutGoods.getTag();
+            MFGT.gotoGoodsDetailsActivity(mContext,goodsId);
         }
     }
+
 }
