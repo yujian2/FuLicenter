@@ -1,9 +1,11 @@
 package com.example.lenovo.fulicenters.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.lenovo.fulicenters.I;
 import com.example.lenovo.fulicenters.R;
 import com.example.lenovo.fulicenters.utils.MFGT;
 
@@ -49,6 +51,16 @@ public class LoginActivity extends BaseActivity {
          case R.id.btn_register:
              MFGT.gotoRegisterActivity(this);
                 break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode==RESULT_OK&&requestCode== I.REQUEST_CODE_REGITER){
+          String name=  data.getStringExtra(I.User.USER_NAME);
+            username.setText(name);
+
         }
     }
 }
