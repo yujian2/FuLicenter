@@ -73,6 +73,7 @@ public class NetDao {
                              .addParam(I.User.NICK,nickname)
                              .addParam(I.User.PASSWORD, MD5.getMessageDigest(password))
                              .targetClass(Result.class)
+                             .post()
                              .execute(listener);
     }
 }

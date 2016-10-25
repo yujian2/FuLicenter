@@ -17,8 +17,6 @@ import com.example.lenovo.fulicenters.bean.CategoryChildBean;
 
 import java.util.ArrayList;
 
-import static com.example.lenovo.fulicenters.I.REQUEST_CODE_REGITER;
-
 
 public class MFGT {
     public static void finish(Activity activity){
@@ -63,20 +61,21 @@ public class MFGT {
         intent.putExtra(I.CategoryChild.ID,list);
         startActivity(context,intent);
     }
-    public  static void gotoLoginActivity(Activity context){
+
+    public static void gotoLogin(Activity context){
         startActivity(context, LoginActivity.class);
     }
-    public  static void gotoRegisterActivity(Activity context){
-        Intent intent=new Intent();
+
+    public static void gotoRegister(Activity context){
+        Intent intent = new Intent();
         intent.setClass(context,RegisterActivity.class);
-        context.startActivityForResult(intent,REQUEST_CODE_REGITER);
+        startActivityForResult(context,intent,I.REQUEST_CODE_REGISTER);
     }
-    public  static void startActivityForResult(Activity context,Intent intent,int requestCode){
 
+
+    public static void startActivityForResult(Activity context,Intent intent,int requestCode){
         context.startActivityForResult(intent,requestCode);
-        context.overridePendingTransition(R.anim.push_left_in,R.anim.push_bottom_out);
-
+        context.overridePendingTransition(R.anim.push_left_in,R.anim.push_left_out);
     }
-
 
 }

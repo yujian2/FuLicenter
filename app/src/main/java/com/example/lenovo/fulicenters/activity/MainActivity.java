@@ -102,7 +102,7 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.layout_personal_center:
                 if (FuLiCenterApplication.getUsername()==null){
-                    MFGT.gotoLoginActivity(this);
+                    MFGT.gotoLogin(this);
 
                 }else {
 

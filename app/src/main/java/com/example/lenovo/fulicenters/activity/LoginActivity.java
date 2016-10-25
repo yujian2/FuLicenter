@@ -7,6 +7,7 @@ import android.widget.EditText;
 
 import com.example.lenovo.fulicenters.I;
 import com.example.lenovo.fulicenters.R;
+import com.example.lenovo.fulicenters.utils.L;
 import com.example.lenovo.fulicenters.utils.MFGT;
 
 import butterknife.BindView;
@@ -16,16 +17,15 @@ import butterknife.OnClick;
 public class LoginActivity extends BaseActivity {
 
     @BindView(R.id.username)
-    EditText username;
+    EditText mUsername;
     @BindView(R.id.password)
-    EditText password;
+    EditText mPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -48,8 +48,8 @@ public class LoginActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.btn_login:
                 break;
-         case R.id.btn_register:
-             MFGT.gotoRegisterActivity(this);
+            case R.id.btn_register:
+                MFGT.gotoRegister(this);
                 break;
         }
     }
@@ -57,10 +57,10 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode==RESULT_OK&&requestCode== I.REQUEST_CODE_REGITER){
-          String name=  data.getStringExtra(I.User.USER_NAME);
-            username.setText(name);
-
+        if(resultCode == RESULT_OK && requestCode == I.REQUEST_CODE_REGISTER){
+            String name = data.getStringExtra(I.User.USER_NAME);
+            L.e("name="+name);
+            mUsername.setText(name);
         }
     }
 }
