@@ -1,7 +1,6 @@
 package com.example.lenovo.fulicenters.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -22,7 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class GoodsDetailActivity extends AppCompatActivity {
+public class GoodsDetailActivity extends BaseActivity {
 
     @BindView(R.id.backClickArea)
     LinearLayout mBackClickArea;
@@ -54,18 +53,16 @@ public class GoodsDetailActivity extends AppCompatActivity {
             finish();
         }
         mContext = this;
-        initView();
-        initData();
-        setListener();
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void setListener() {
 
     }
 
-    private void setListener() {
-
-    }
-
-    private void initData() {
+    @Override
+    protected  void initData() {
         NetDao.downloadGoodsDetail(mContext, goodsId, new OkHttpUtils.OnCompleteListener<GoodsDetailsBean>() {
             @Override
             public void onSuccess(GoodsDetailsBean result) {
@@ -114,7 +111,8 @@ public class GoodsDetailActivity extends AppCompatActivity {
         return urls;
     }
 
-    private void initView() {
+    @Override
+    protected  void initView() {
 
     }
 
