@@ -7,9 +7,13 @@ import android.content.Intent;
 import com.example.lenovo.fulicenters.I;
 import com.example.lenovo.fulicenters.R;
 import com.example.lenovo.fulicenters.activity.BoutiqueChildActivity;
+import com.example.lenovo.fulicenters.activity.CategoryChildActivity;
 import com.example.lenovo.fulicenters.activity.GoodsDetailActivity;
 import com.example.lenovo.fulicenters.activity.MainActivity;
 import com.example.lenovo.fulicenters.bean.BoutiqueBean;
+import com.example.lenovo.fulicenters.bean.CategoryChildBean;
+
+import java.util.ArrayList;
 
 
 public class MFGT {
@@ -43,6 +47,16 @@ public class MFGT {
         Intent intent = new Intent();
         intent.setClass(context, BoutiqueChildActivity.class);
         intent.putExtra(I.Boutique.CAT_ID,bean);
+        startActivity(context,intent);
+    }
+
+
+    public static void gotoCategoryChildActivity(Context context, int catId, String groupName, ArrayList<CategoryChildBean> list){
+        Intent intent = new Intent();
+        intent.setClass(context, CategoryChildActivity.class);
+        intent.putExtra(I.CategoryChild.CAT_ID,catId);
+        intent.putExtra(I.CategoryGroup.NAME,groupName);
+        intent.putExtra(I.CategoryChild.ID,list);
         startActivity(context,intent);
     }
 
