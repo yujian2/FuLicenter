@@ -9,6 +9,7 @@ import com.example.lenovo.fulicenters.R;
 import com.example.lenovo.fulicenters.activity.BoutiqueChildActivity;
 import com.example.lenovo.fulicenters.activity.CategoryChildActivity;
 import com.example.lenovo.fulicenters.activity.GoodsDetailActivity;
+import com.example.lenovo.fulicenters.activity.LoginActivity;
 import com.example.lenovo.fulicenters.activity.MainActivity;
 import com.example.lenovo.fulicenters.bean.BoutiqueBean;
 import com.example.lenovo.fulicenters.bean.CategoryChildBean;
@@ -58,6 +59,9 @@ public class MFGT {
         intent.putExtra(I.CategoryGroup.NAME,groupName);
         intent.putExtra(I.CategoryChild.ID,list);
         startActivity(context,intent);
+    }
+    public  static void gotoLoginActivity(Activity context){
+        startActivity(context, LoginActivity.class);
     }
 
 }

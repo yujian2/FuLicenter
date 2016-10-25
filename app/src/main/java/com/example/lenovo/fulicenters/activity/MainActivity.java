@@ -7,15 +7,15 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.example.lenovo.fulicenters.FuLiCenterApplication;
 import com.example.lenovo.fulicenters.R;
 import com.example.lenovo.fulicenters.fragment.BoutiqueFragment;
 import com.example.lenovo.fulicenters.fragment.CategoryFragment;
 import com.example.lenovo.fulicenters.fragment.NewGoodsFragment;
+import com.example.lenovo.fulicenters.utils.MFGT;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 
 public class MainActivity extends BaseActivity {
 
@@ -101,7 +101,13 @@ public class MainActivity extends BaseActivity {
                 index = 3;
                 break;
             case R.id.layout_personal_center:
-                index = 4;
+                if (FuLiCenterApplication.getUsername()==null){
+                    MFGT.gotoLoginActivity(this);
+
+                }else {
+
+                    index = 4;
+                }
                 break;
         }
         setFragment();
