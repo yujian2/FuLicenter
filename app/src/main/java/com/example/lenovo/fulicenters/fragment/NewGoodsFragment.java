@@ -21,6 +21,7 @@ import com.example.lenovo.fulicenters.net.OkHttpUtils;
 import com.example.lenovo.fulicenters.utils.CommonUtils;
 import com.example.lenovo.fulicenters.utils.ConvertUtils;
 import com.example.lenovo.fulicenters.utils.L;
+import com.example.lenovo.fulicenters.view.SpaceItemDecoration;
 
 import java.util.ArrayList;
 
@@ -145,5 +146,6 @@ public class NewGoodsFragment extends Fragment {
         mRv.setLayoutManager(glm);
         mRv.setHasFixedSize(true);
         mRv.setAdapter(mAdapter);
+        mRv.addItemDecoration(new SpaceItemDecoration(12));
     }
 }
