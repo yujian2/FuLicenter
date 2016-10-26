@@ -12,6 +12,8 @@ import com.example.lenovo.fulicenters.activity.GoodsDetailActivity;
 import com.example.lenovo.fulicenters.activity.LoginActivity;
 import com.example.lenovo.fulicenters.activity.MainActivity;
 import com.example.lenovo.fulicenters.activity.RegisterActivity;
+import com.example.lenovo.fulicenters.activity.UpdateNickActivity;
+import com.example.lenovo.fulicenters.activity.UserProfileActivity;
 import com.example.lenovo.fulicenters.bean.BoutiqueBean;
 import com.example.lenovo.fulicenters.bean.CategoryChildBean;
 
@@ -81,11 +83,11 @@ public class MFGT {
     }
 
     public static void gotoSettings(Activity context){
-        //startActivity(context, UserProfileActivity.class);
+        startActivity(context, UserProfileActivity.class);
     }
 
     public static void gotoUpdateNick(Activity context){
-       // startActivityForResult(context,new Intent(context, UpdateNickActivity.class),I.REQUEST_CODE_NICK);
+        startActivityForResult(context,new Intent(context, UpdateNickActivity.class),I.REQUEST_CODE_NICK);
     }
 
 }
