@@ -11,10 +11,14 @@ import android.widget.TextView;
 import com.example.lenovo.fulicenters.FuLiCenterApplication;
 import com.example.lenovo.fulicenters.R;
 import com.example.lenovo.fulicenters.activity.MainActivity;
+import com.example.lenovo.fulicenters.bean.Result;
 import com.example.lenovo.fulicenters.bean.User;
+import com.example.lenovo.fulicenters.net.NetDao;
+import com.example.lenovo.fulicenters.net.OkHttpUtils;
 import com.example.lenovo.fulicenters.utils.ImageLoader;
 import com.example.lenovo.fulicenters.utils.L;
 import com.example.lenovo.fulicenters.utils.MFGT;
+import com.example.lenovo.fulicenters.utils.ResultUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -83,6 +87,27 @@ public class PersonalCenterFragment extends BaseFragment {
 
     @OnClick({R.id.tv_center_settings,R.id.iv_user_avatar,R.id.tv_user_name})
     public void onClick() {
+
         MFGT.gotoSettings(mContext);
+    }
+    private  void syncUserinfo(){
+        NetDao.syncUserInfo(mContext, user.getMuserName(), new OkHttpUtils.OnCompleteListener<String>() {
+            @Override
+            public void onSuccess(String s) {
+                Result result = ResultUtils.getResultFromJson(s, User.class);
+                if (result!=null){
+                   User u= (User) result.getRetData();
+                    if (user.equals(u)){
+
+                    }
+                }
+
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        });
     }
 }

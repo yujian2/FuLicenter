@@ -79,25 +79,6 @@ public class User {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-
-        User user = (User) o;
-
-        if (!getMuserName().equals(user.getMuserName())) return false;
-        return getMavatarLastUpdateTime().equals(user.getMavatarLastUpdateTime());
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = getMuserName().hashCode();
-        result = 31 * result + getMavatarLastUpdateTime().hashCode();
-        return result;
-    }
-
-    @Override
     public String toString() {
         return "User{" +
                 "muserName='" + muserName + '\'' +
@@ -108,5 +89,24 @@ public class User {
                 ", mavatarType=" + mavatarType +
                 ", mavatarLastUpdateTime='" + mavatarLastUpdateTime + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (!muserName.equals(user.muserName)) return false;
+        return mavatarLastUpdateTime != null ? mavatarLastUpdateTime.equals(user.mavatarLastUpdateTime) : user.mavatarLastUpdateTime == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = muserName.hashCode();
+        result = 31 * result + (mavatarLastUpdateTime != null ? mavatarLastUpdateTime.hashCode() : 0);
+        return result;
     }
 }
