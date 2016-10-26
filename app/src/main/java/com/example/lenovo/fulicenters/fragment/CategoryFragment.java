@@ -29,7 +29,7 @@ import butterknife.ButterKnife;
 
 public class CategoryFragment extends BaseFragment {
 
-    @BindView(R.id.elv_category)
+    @BindView(R.id.elv_categorp)
     ExpandableListView mElvCategory;
 
     CategoryAdapter mAdapter;

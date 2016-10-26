@@ -27,13 +27,11 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static java.security.AccessController.getContext;
-
 
 public class NewGoodsFragment extends BaseFragment {
     @BindView(R.id.tv_refresh)
     TextView mTvRefresh;
-    @BindView(R.id.rv)
+    @BindView(R.id.rvNewGoods)
     RecyclerView mRv;
     @BindView(R.id.srl)
     SwipeRefreshLayout mSrl;

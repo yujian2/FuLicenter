@@ -10,11 +10,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.lenovo.fulicenters.I;
-import com.example.lenovo.fulicenters.R;
 import com.example.lenovo.fulicenters.adapter.GoodsAdapter;
 import com.example.lenovo.fulicenters.bean.CategoryChildBean;
 import com.example.lenovo.fulicenters.bean.NewGoodsBean;
 import com.example.lenovo.fulicenters.net.NetDao;
+import com.example.lenovo.fulicenters.R;
 import com.example.lenovo.fulicenters.net.OkHttpUtils;
 import com.example.lenovo.fulicenters.utils.CatChildFilterButton;
 import com.example.lenovo.fulicenters.utils.CommonUtils;
@@ -33,7 +33,7 @@ public class CategoryChildActivity extends BaseActivity {
 
     @BindView(R.id.tv_refresh)
     TextView mTvRefresh;
-    @BindView(R.id.rv)
+    @BindView(R.id.rvNewGoods)
     RecyclerView mRv;
     @BindView(R.id.srl)
     SwipeRefreshLayout mSrl;

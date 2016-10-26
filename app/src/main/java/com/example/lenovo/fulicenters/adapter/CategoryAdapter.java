@@ -78,7 +78,7 @@ public class CategoryAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpand, View view, ViewGroup viewGroup) {
         GroupViewHolder holder;
         if (view == null) {
-            view = View.inflate(mContext, R.layout.item_category_group, null);
+            view = View.inflate(mContext, R.layout.item_categroy_group, null);
             holder = new GroupViewHolder(view);
             view.setTag(holder);
         } else {

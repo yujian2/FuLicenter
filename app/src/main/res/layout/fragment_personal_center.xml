@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -58,7 +57,16 @@
                         android:layout_margin="8dip"
                         android:scaleType="centerCrop"
                         android:src="@drawable/contactlogo" />
-
+                    <TextView
+                        android:id="@+id/tv_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="18sp"
+                        android:layout_toRightOf="@id/iv_user_avatar"
+                        android:text="恋上猫女衣坊"
+                        android:textColor="@color/white" />
                     <ImageView
                         android:id="@+id/iv_user_qrcode"
                         android:layout_width="wrap_content"
@@ -67,18 +75,6 @@
                         android:layout_marginLeft="10dp"
                         android:src="@drawable/tb_icon_home_qrcode_normal"
                         android:layout_toRightOf="@id/tv_user_name"/>
-
-                    <TextView
-                        android:id="@+id/tv_user_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:textSize="18sp"
-                        android:text="恋上猫女衣坊"
-                        android:textColor="@color/white"
-                        android:layout_centerVertical="true"
-                        android:layout_toEndOf="@+id/iv_user_avatar"
-                        android:layout_marginStart="13dp" />
                 </RelativeLayout>
 
                 <RelativeLayout

@@ -80,4 +80,12 @@ public class MFGT {
         context.overridePendingTransition(R.anim.push_left_in,R.anim.push_left_out);
     }
 
+    public static void gotoSettings(Activity context){
+        //startActivity(context, UserProfileActivity.class);
+    }
+
+    public static void gotoUpdateNick(Activity context){
+       // startActivityForResult(context,new Intent(context, UpdateNickActivity.class),I.REQUEST_CODE_NICK);
+    }
+
 }

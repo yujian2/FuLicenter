@@ -33,7 +33,7 @@ public class MainActivity extends BaseActivity {
     RadioButton mLayoutCategory;
     @BindView(R.id.layout_cart)
     RadioButton mLayoutCart;
-    @BindView(R.id.tvCartHint)
+    @BindView(R.id.textview)
     TextView mTvCartHint;
     @BindView(R.id.layout_personal_center)
     RadioButton mLayoutPersonalCenter;

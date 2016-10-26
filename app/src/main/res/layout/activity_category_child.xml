@@ -23,6 +23,7 @@
                 android:layout_gravity="center_vertical"/>
         </LinearLayout>
         <com.example.lenovo.fulicenters.utils.CatChildFilterButton
+
             android:id="@+id/btnCatChildFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
