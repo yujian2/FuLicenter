@@ -66,9 +66,11 @@ public class UserProfileActivity extends BaseActivity {
             case R.id.layout_user_profile_avatar:
                 break;
             case R.id.layout_user_profile_username:
-                CommonUtils.showShortToast(R.string.user_name_connot_be_empty);
+                CommonUtils.showShortToast(R.string.username_connot_be_modify);
                 break;
             case R.id.layout_user_profile_nickname:
+                MFGT.gotoUpdateNick(mContext);
+
                 break;
             case R.id.btn_logout:
                 logout();

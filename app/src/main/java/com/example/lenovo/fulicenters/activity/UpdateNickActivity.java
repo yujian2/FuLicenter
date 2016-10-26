@@ -48,12 +48,18 @@ public class UpdateNickActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+      if (user==null){
+            finish();
+        }else {
+          showInfo();
+      }
+    }
+
+    private void showInfo() {
         user = FuLiCenterApplication.getUser();
         if (user != null) {
             mEtUpdateUserName.setText(user.getMuserNick());
             mEtUpdateUserName.setSelectAllOnFocus(true);
-        } else {
-            finish();
         }
     }
 
