@@ -8,6 +8,7 @@ import com.example.lenovo.fulicenters.I;
 import com.example.lenovo.fulicenters.R;
 import com.example.lenovo.fulicenters.activity.BoutiqueChildActivity;
 import com.example.lenovo.fulicenters.activity.CategoryChildActivity;
+import com.example.lenovo.fulicenters.activity.CollectsActivity;
 import com.example.lenovo.fulicenters.activity.GoodsDetailActivity;
 import com.example.lenovo.fulicenters.activity.LoginActivity;
 import com.example.lenovo.fulicenters.activity.MainActivity;
@@ -91,7 +92,7 @@ public class MFGT {
     }
 
     public static void gotoCollects(Activity context){
-     //   startActivity(context, CollectsActivity.class);
+        startActivity(context, CollectsActivity.class);
     }
 
 }
