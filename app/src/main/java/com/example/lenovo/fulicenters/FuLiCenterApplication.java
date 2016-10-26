@@ -2,12 +2,15 @@ package com.example.lenovo.fulicenters;
 
 import android.app.Application;
 
+import com.example.lenovo.fulicenters.bean.User;
+
 
 public class FuLiCenterApplication extends Application {
     public static FuLiCenterApplication application;
     private static FuLiCenterApplication instance;
-    private  static FuLiCenterApplication username;
 
+    private static String username;
+    private static User user;
 
     @Override
     public void onCreate() {
@@ -15,6 +18,7 @@ public class FuLiCenterApplication extends Application {
         application = this;
         instance = this;
     }
+
     public static FuLiCenterApplication getInstance(){
         if(instance==null){
             instance = new FuLiCenterApplication();
@@ -22,11 +26,19 @@ public class FuLiCenterApplication extends Application {
         return instance;
     }
 
-    public static FuLiCenterApplication getUsername() {
+    public static String getUsername() {
         return username;
     }
 
-    public static void setUsername(FuLiCenterApplication username) {
+    public static void setUsername(String username) {
         FuLiCenterApplication.username = username;
+    }
+
+    public static User getUser() {
+        return user;
+    }
+
+    public static void setUser(User user) {
+        FuLiCenterApplication.user = user;
     }
 }
