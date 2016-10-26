@@ -7,10 +7,13 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.lenovo.fulicenters.FuLiCenterApplication;
 import com.example.lenovo.fulicenters.I;
 import com.example.lenovo.fulicenters.R;
 import com.example.lenovo.fulicenters.bean.Result;
 import com.example.lenovo.fulicenters.bean.User;
+import com.example.lenovo.fulicenters.dao.SharePrefrenceUtils;
+import com.example.lenovo.fulicenters.dao.UserDao;
 import com.example.lenovo.fulicenters.net.NetDao;
 import com.example.lenovo.fulicenters.net.OkHttpUtils;
 import com.example.lenovo.fulicenters.utils.CommonUtils;
@@ -21,7 +24,6 @@ import com.example.lenovo.fulicenters.utils.ResultUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
 
 
 public class LoginActivity extends BaseActivity {
@@ -103,7 +105,15 @@ public class LoginActivity extends BaseActivity {
                     if(result.isRetMsg()){
                         User user = (User) result.getRetData();
                         L.e(TAG,"user="+user);
-                        MFGT.finish(mContext);
+                        UserDao dao = new UserDao(mContext);
+                        boolean isSuccess = dao.saveUser(user);
+                        if(isSuccess){
+                            SharePrefrenceUtils.getInstence(mContext).saveUser(user.getMuserName());
+                            FuLiCenterApplication.setUser(user);
+                            MFGT.finish(mContext);
+                        }else{
+                            CommonUtils.showLongToast(R.string.user_database_error);
+                        }
                     }else{
                         if(result.getRetCode()== I.MSG_LOGIN_UNKNOW_USER){
                             CommonUtils.showLongToast(R.string.login_fail_unknow_user);

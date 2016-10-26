@@ -21,7 +21,6 @@ import com.example.lenovo.fulicenters.utils.MFGT;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-
 public class MainActivity extends BaseActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
