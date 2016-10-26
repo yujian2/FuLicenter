@@ -9,6 +9,7 @@ import com.example.lenovo.fulicenters.FuLiCenterApplication;
 import com.example.lenovo.fulicenters.R;
 import com.example.lenovo.fulicenters.bean.User;
 import com.example.lenovo.fulicenters.dao.SharePrefrenceUtils;
+import com.example.lenovo.fulicenters.utils.CommonUtils;
 import com.example.lenovo.fulicenters.utils.ImageLoader;
 import com.example.lenovo.fulicenters.utils.MFGT;
 import com.example.lenovo.fulicenters.view.DisplayUtils;
@@ -65,6 +66,7 @@ public class UserProfileActivity extends BaseActivity {
             case R.id.layout_user_profile_avatar:
                 break;
             case R.id.layout_user_profile_username:
+                CommonUtils.showShortToast(R.string.user_name_connot_be_empty);
                 break;
             case R.id.layout_user_profile_nickname:
                 break;
