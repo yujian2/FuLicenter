@@ -28,6 +28,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
+
 public class NewGoodsFragment extends BaseFragment {
     @BindView(R.id.tv_refresh)
     TextView mTvRefresh;
@@ -81,7 +82,6 @@ public class NewGoodsFragment extends BaseFragment {
                 mSrl.setRefreshing(false);
                 mTvRefresh.setVisibility(View.GONE);
                 mAdapter.setMore(true);
-                L.e("result="+result);
                 if(result!=null && result.length>0){
                     ArrayList<NewGoodsBean> list = ConvertUtils.array2List(result);
                     if(action==I.ACTION_DOWNLOAD || action == I.ACTION_PULL_DOWN) {

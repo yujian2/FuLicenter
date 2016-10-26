@@ -26,4 +26,7 @@
     <string name="login_fail_unKnow_user">loginfail unKnow username</string>
     <string name="login_fail_error_password">login fail error password</string>
     <string name="user_database_error">user database error</string>
+    <string name="loginout">loginout</string>
+    <string name="user_profile_avatar">user_profile_avatar</string>
+   <string name="user_profile">user profile</string>
 </resources>

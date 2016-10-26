@@ -12,17 +12,16 @@ import com.example.lenovo.fulicenters.activity.MainActivity;
 import com.example.lenovo.fulicenters.adapter.CategoryAdapter;
 import com.example.lenovo.fulicenters.bean.CategoryChildBean;
 import com.example.lenovo.fulicenters.bean.CategoryGroupBean;
-import com.example.lenovo.fulicenters.fragment.BaseFragment;
 import com.example.lenovo.fulicenters.net.NetDao;
 import com.example.lenovo.fulicenters.net.OkHttpUtils;
 import com.example.lenovo.fulicenters.utils.ConvertUtils;
+import com.example.lenovo.fulicenters.utils.L;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 
 /**
  * Created by clawpo on 2016/10/20.

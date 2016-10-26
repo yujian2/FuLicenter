@@ -20,6 +20,7 @@ import com.example.lenovo.fulicenters.utils.CommonUtils;
 import com.example.lenovo.fulicenters.utils.L;
 import com.example.lenovo.fulicenters.utils.MFGT;
 import com.example.lenovo.fulicenters.utils.ResultUtils;
+import com.example.lenovo.fulicenters.view.DisplayUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -49,7 +50,7 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+        DisplayUtils.initBackWithTitle(mContext,getResources().getString(R.string.login));
     }
 
     @Override
