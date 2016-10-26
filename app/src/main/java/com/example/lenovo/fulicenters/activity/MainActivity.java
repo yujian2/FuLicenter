@@ -12,10 +12,13 @@ import com.example.lenovo.fulicenters.R;
 import com.example.lenovo.fulicenters.fragment.BoutiqueFragment;
 import com.example.lenovo.fulicenters.fragment.CategoryFragment;
 import com.example.lenovo.fulicenters.fragment.NewGoodsFragment;
+import com.example.lenovo.fulicenters.fragment.PersonalCenterFragment;
+import com.example.lenovo.fulicenters.utils.L;
 import com.example.lenovo.fulicenters.utils.MFGT;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 
 public class MainActivity extends BaseActivity {
 
@@ -39,11 +42,13 @@ public class MainActivity extends BaseActivity {
     NewGoodsFragment mNewGoodsFragment;
     BoutiqueFragment mBoutiqueFragment;
     CategoryFragment mCategoryFragment;
+    PersonalCenterFragment mPersonalCenterFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        L.i("MainActivity onCreate");
         super.onCreate(savedInstanceState);
     }
 
@@ -52,9 +57,11 @@ public class MainActivity extends BaseActivity {
         mNewGoodsFragment = new NewGoodsFragment();
         mBoutiqueFragment = new BoutiqueFragment();
         mCategoryFragment = new CategoryFragment();
+        mPersonalCenterFragment = new PersonalCenterFragment();
         mFragments[0] = mNewGoodsFragment;
         mFragments[1] = mBoutiqueFragment;
         mFragments[2] = mCategoryFragment;
+        mFragments[4] = mPersonalCenterFragment;
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fragment_container,mNewGoodsFragment)
@@ -101,11 +108,9 @@ public class MainActivity extends BaseActivity {
                 index = 3;
                 break;
             case R.id.layout_personal_center:
-                if (FuLiCenterApplication.getUsername()==null){
+                if(FuLiCenterApplication.getUser()==null){
                     MFGT.gotoLogin(this);
-
                 }else {
-
                     index = 4;
                 }
                 break;
@@ -127,6 +132,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void setRadioButtonStatus() {
+        L.e("index="+index);
         for (int i=0;i<rbs.length;i++){
             if(i==index){
                 rbs[i].setChecked(true);
