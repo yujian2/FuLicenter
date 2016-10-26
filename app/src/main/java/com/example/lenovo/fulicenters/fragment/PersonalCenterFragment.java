@@ -20,6 +20,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.example.lenovo.fulicenters.R.id.tv_user_name;
+
 
 /**
  * Created by clawpo on 2016/10/24.
@@ -29,10 +31,11 @@ public class PersonalCenterFragment extends BaseFragment {
     private static final String TAG = PersonalCenterFragment.class.getSimpleName();
     @BindView(R.id.iv_user_avatar)
     ImageView mIvUserAvatar;
-    @BindView(R.id.tv_user_name)
+    @BindView(tv_user_name)
     TextView mTvUserName;
 
     MainActivity mContext;
+    User user=null;
 
     @Nullable
     @Override
@@ -51,7 +54,7 @@ public class PersonalCenterFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-        User user = FuLiCenterApplication.getUser();
+        user = FuLiCenterApplication.getUser();
         L.e(TAG, "user=" + user);
         if (user == null) {
             MFGT.gotoLogin(mContext);
@@ -66,7 +69,19 @@ public class PersonalCenterFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.tv_center_settings,R.id.iv_user_avatar})
+    @Override
+    public void onResume() {
+        super.onResume();
+        user = FuLiCenterApplication.getUser();
+        L.e(TAG, "user=" + user);
+        if (user != null) {
+
+            ImageLoader.setAvatar(ImageLoader.getAvatarUrl(user), mContext, mIvUserAvatar);
+            mTvUserName.setText(user.getMuserNick());
+        }
+    }
+
+    @OnClick({R.id.tv_center_settings,R.id.iv_user_avatar,R.id.tv_user_name})
     public void onClick() {
         MFGT.gotoSettings(mContext);
     }
