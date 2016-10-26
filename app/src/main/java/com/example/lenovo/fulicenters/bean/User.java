@@ -1,8 +1,6 @@
 package com.example.lenovo.fulicenters.bean;
 
-/**
- * Created by clawpo on 2016/10/21.
- */
+import com.example.lenovo.fulicenters.I;
 
 public class User {
 
@@ -23,7 +21,6 @@ public class User {
     private String mavatarSuffix;
     private int mavatarType;
     private String mavatarLastUpdateTime;
-
 
     public String getMuserName() {
         return muserName;
@@ -58,7 +55,7 @@ public class User {
     }
 
     public String getMavatarSuffix() {
-        return mavatarSuffix;
+        return mavatarSuffix!=null?mavatarSuffix: I.AVATAR_SUFFIX_JPG;
     }
 
     public void setMavatarSuffix(String mavatarSuffix) {
