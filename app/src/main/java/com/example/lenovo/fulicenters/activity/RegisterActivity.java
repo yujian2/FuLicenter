@@ -112,7 +112,6 @@ public class RegisterActivity extends BaseActivity {
                 }else{
                     if(result.isRetMsg()){
                         CommonUtils.showLongToast(R.string.register_success);
-                        L.e(TAG+"ERROR");
                         setResult(RESULT_OK,new Intent().putExtra(I.User.USER_NAME,username));
                         MFGT.finish(mContext);
                     }else{

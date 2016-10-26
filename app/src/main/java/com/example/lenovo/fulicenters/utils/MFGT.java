@@ -90,4 +90,8 @@ public class MFGT {
         startActivityForResult(context,new Intent(context, UpdateNickActivity.class),I.REQUEST_CODE_NICK);
     }
 
+    public static void gotoCollects(Activity context){
+     //   startActivity(context, CollectsActivity.class);
+    }
+
 }
