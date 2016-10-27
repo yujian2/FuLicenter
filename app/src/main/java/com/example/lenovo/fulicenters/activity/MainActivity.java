@@ -124,10 +124,12 @@ public class MainActivity extends BaseActivity {
         if(index!=currentIndex) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.hide(mFragments[currentIndex]);
+            L.e("setFragment1");
             if(!mFragments[index].isAdded()){
                 ft.add(R.id.fragment_container,mFragments[index]);
             }
             ft.show(mFragments[index]).commit();
+            L.e("setFragment2");
         }
         setRadioButtonStatus();
         currentIndex = index;

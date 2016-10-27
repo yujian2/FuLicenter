@@ -55,7 +55,7 @@ public class User {
     }
 
     public String getMavatarSuffix() {
-        return mavatarSuffix!=null?mavatarSuffix: I.AVATAR_SUFFIX_JPG;
+        return mavatarSuffix!=null?I.AVATAR_SUFFIX_PNG: I.AVATAR_SUFFIX_JPG;
     }
 
     public void setMavatarSuffix(String mavatarSuffix) {
